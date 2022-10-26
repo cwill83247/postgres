@@ -1,7 +1,7 @@
 import psycopg2
 
 # connect to "chinook" database    could add location etc.. etc but not needed here 
-connection = psycopg2.connect(database="chinook")
+connection = psycopg2.connect(host="localhost", database="chinook")
 
 # build a cursor object of the database  needs an instance of a cursor object....  
 cursor = connection.cursor()
@@ -19,7 +19,7 @@ cursor.execute('SELECT * FROM "Artist"')
 # cursor.execute('SELECT * FROM "Artist" WHERE "ArtistId" = %s', [51])
 
 # Query 5 - select only the albums with "ArtistId" #51 on the "Album" table
-# cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', [51])
+# cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', [51])                 
 
 # Query 6 - select all tracks where the composer is "Queen" from the "Track" table
 # cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Queen"])
